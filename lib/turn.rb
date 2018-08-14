@@ -45,10 +45,19 @@ end
 #to make the move
 def move(board,index,character = "X")
   board[index] = character
+  board
 end  
 
 #to greet and make turns
 
 def turn(board)
   puts "Please enter 1-9:"
+  input = gets.strip
+  index = input_to_index(input)
+
+if valid_move?(board,index) == true
+  move(board,index);
+  else 
+  turn(board);
+  end
 end
